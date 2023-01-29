@@ -1,11 +1,16 @@
 # Import Libraries
 import streamlit as st
 import pandas as pd
-import plotly_express as px
+import numpy as np
+import matplotlib.pyplot as plt
+import welly
+import lasio
 from streamlit_option_menu import option_menu
 from PIL import Image
-from collections import namedtuple
-from math import radians, acos, asin, cos, sin, atan, degrees, sqrt
+from pathlib import Path
+import warnings
+warnings.filterwarnings('ignore')
+
 
 
 def data(dataframe):
@@ -13,3 +18,10 @@ def data(dataframe):
     st.write(dataframe.head())
     st.header("**Statistical information**")
     st.write(dataframe.describe())
+
+def dataNull(dataframe):
+    st.header("**Null Data Resume**")
+    df_n = dataframe.isna().sum()
+    st.write(df_n)
+    #fig_n = plt.bar(df_n.index,df_n[0])
+    st.bar_chart(df_n)

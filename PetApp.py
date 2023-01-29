@@ -10,7 +10,7 @@ from PIL import Image
 from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
-from Functions import data
+from Functions import data, dataNull
 
 # Insert icon of web app
 icon = Image.open("resources/logo.jpg")
@@ -23,7 +23,7 @@ st.write("This logs contain information about petrophysical features of any well
 
 # Upload files
 upload_file_input = st.sidebar.file_uploader("Upload your input LAS file")
-upload_file_output = st.sidebar.file_uploader("Upload your output LAS file")
+#upload_file_output = st.sidebar.file_uploader("Upload your output LAS file")
 
 # Pages
 with st.sidebar:
@@ -33,25 +33,25 @@ with st.sidebar:
         icons=["house", "clipboard-data", "tv"],
     )
 
-#DataFrame
-file_input = upload_file_input
-file_output = upload_file_output
-log_input = welly.well.from_las(file_input)
-log_output = welly.well.from_las(file_output)
-df_input = pd.DataFrame(log_input)
-df_output = pd.DataFrame(log_output)
+if upload_file_input is not None:
+    nomb = str(upload_file_input.name)
+    dir = "Data/F1B/"
+    file_name = dir+nomb
+
+    file_input = Path(file_name)
+
+    log_input = welly.Well.from_las(file_input)
+
+    df_input = log_input.df()
 
 
 
-
-# Call dataframe
-if upload_file_input:
-    df_input
-if upload_file_output:
-    df_output
 
 # Call web app sections
 if options == "Data Information":
     data(df_input)
-    data(df_output)
+    #data(df_output)
+    dataNull(df_input)
+
+
 
