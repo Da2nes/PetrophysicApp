@@ -10,7 +10,7 @@ from PIL import Image
 from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
-from Code.Functions import data
+from Functions import data
 
 # Insert icon of web app
 icon = Image.open("resources/logo.jpg")
