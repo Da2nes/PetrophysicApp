@@ -22,6 +22,9 @@ def data(dataframe):
 def dataNull(dataframe):
     st.header("**Null Data Resume**")
     df_n = dataframe.isna().sum()
+    df_n = pd.DataFrame(df_n)
     st.write(df_n)
     #fig_n = plt.bar(df_n.index,df_n[0])
     st.bar_chart(df_n)
+
+#def plots()

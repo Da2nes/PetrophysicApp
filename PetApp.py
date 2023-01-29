@@ -53,5 +53,13 @@ if options == "Data Information":
     #data(df_output)
     dataNull(df_input)
 
+if options == "Data Information":
+    data(df_input)
+    #data(df_output)
+    dataNull(df_input)
+
+if options == "Logs Visualization":
+    #numTracks = st.number_input("Input track number",step=1)
+    st.selectbox("Select",[])
 
 
