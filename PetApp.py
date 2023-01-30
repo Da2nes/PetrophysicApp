@@ -86,9 +86,9 @@ if options == "Logs Visualization":
     except:
         st.write("You must enter the depths and choose at least two logs.")
         
-if options == "Petrophysical Calculations":
-    try:
-        df_input['VSH'] = (df_input['GR'].max() - df_input['GR']) / (df_input['GR'].max() - df_input['GR'].min())
-        df_input.head()
-    except:
-        st.write("Code")
+#if options == "Petrophysical Calculations":
+#    try:
+#        df_input['VSH'] = (df_input['GR'].max() - df_input['GR']) / (df_input['GR'].max() - df_input['GR'].min())
+#        df_input.head()
+#    except:
+#        st.write("Code")
