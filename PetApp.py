@@ -9,11 +9,13 @@ from streamlit_option_menu import option_menu
 from PIL import Image
 from pathlib import Path
 import warnings
+import os
 warnings.filterwarnings('ignore')
 from Functions import data, dataNull, Logs_
 
 # Insert icon of web app
-icon = Image.open("PetrophysicApp/resources/logo.jpg")
+
+icon = Image.open("logo.jpg")
 # Page Layout
 st.set_page_config(page_title="Well Logs App", page_icon=icon)
 
