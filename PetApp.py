@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore')
 from Functions import data, dataNull, Logs_
 
 # Insert icon of web app
-icon = Image.open("Resources/image.png")
+icon = Image.open("resources/logo.jpg")
 # Page Layout
 st.set_page_config(page_title="Well Logs App", page_icon=icon)
 
@@ -29,7 +29,7 @@ try:
     if (upload_file_input is not None) and (carp_nom is not None):
         b = "/"
         nomb = str(upload_file_input.name)
-        dir = "Data/"
+        dir = "data/"
         file_name = dir + carp_nom + b + nomb
         file_input = Path(file_name)
         log_input = welly.Well.from_las(file_input)
@@ -54,9 +54,9 @@ with st.sidebar:
 if options == "Home":
     st.header("**Well Logs Information**")
     st.write("Well logs are geophysical records of oil and gas well explorations. These logs include detailed information on the geological and physical properties of the subsurface, including depth, resistivity and porosity of rock formations. Well logs are essential for evaluating the production potential of a well and for making informed decisions about drilling and completing the well.")
-    img = Image.open("Resources/image.png")
+    img = Image.open("resources/image.png")
     st.image(img,width=100, use_column_width=True)
-    video = open("Resources/videowelllog.mp4", "rb")
+    video = open("resources/videowelllog.mp4", "rb"
     st.video(video)
     st.caption("Video about Well Logging")
 
