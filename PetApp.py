@@ -46,8 +46,8 @@ except:
 with st.sidebar:
     options = option_menu(
         menu_title="Main Menu",
-        options=["Home", "Data Information", "Logs Visualization"],
-        icons=["house", "clipboard-data", "tv"],
+        options=["Home", "Data Information", "Logs Visualization", "Petrophysical Calculations"],
+        icons=["house", "clipboard-data", "tv", "calculator"],
     )
 
 
@@ -85,3 +85,10 @@ if options == "Logs Visualization":
         Logs_(tracks, log_input, d_end, d_start)
     except:
         st.write("You must enter the depths and choose at least two logs.")
+        
+if options == "Petrophysical Calculations":
+    try:
+        df_input['VSH'] = (df_input['GR'].max() - df_input['GR']) / (df_input['GR'].max() - df_input['GR'].min())
+        df_input.head()
+    except:
+        st.write("Code")
