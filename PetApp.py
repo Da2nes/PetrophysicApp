@@ -56,7 +56,7 @@ if options == "Home":
     st.write("Well logs are geophysical records of oil and gas well explorations. These logs include detailed information on the geological and physical properties of the subsurface, including depth, resistivity and porosity of rock formations. Well logs are essential for evaluating the production potential of a well and for making informed decisions about drilling and completing the well.")
     img = Image.open("resources/image.png")
     st.image(img,width=100, use_column_width=True)
-    video = open("resources/videowelllog.mp4", "rb"
+    video = open("resources/videowelllog.mp4", "rb")
     st.video(video)
     st.caption("Video about Well Logging")
 
