@@ -14,6 +14,8 @@ from Functions import data, dataNull, Logs_
 
 # Insert icon of web app
 icon = Image.open("resources/image.png")
+lottie_coding = load_lottiefile("lottiefiles/coding.json")
+lottie_hello = load_lottiefile("lottiefiles/hello.json")
 # Page Layout
 st.set_page_config(page_title="Well Logs App", page_icon=icon)
 
