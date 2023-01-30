@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore')
 from Functions import data, dataNull, Logs_
 
 # Insert icon of web app
-icon = Image.open('resources/logo.jpg')
+icon = Image.open("resources/logo.jpg","rb")
 # Page Layout
 st.set_page_config(page_title="Well Logs App", page_icon=icon)
 
