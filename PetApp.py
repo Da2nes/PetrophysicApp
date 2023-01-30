@@ -15,7 +15,7 @@ from Functions import data, dataNull, Logs_
 
 # Insert icon of web app
 
-icon = Image.open("logo.jpg")
+icon = Image.open("Resources/logo.jpg")
 # Page Layout
 st.set_page_config(page_title="Well Logs App", page_icon=icon)
 
@@ -56,9 +56,9 @@ with st.sidebar:
 if options == "Home":
     st.header("**Well Logs Information**")
     st.write("Well logs are geophysical records of oil and gas well explorations. These logs include detailed information on the geological and physical properties of the subsurface, including depth, resistivity and porosity of rock formations. Well logs are essential for evaluating the production potential of a well and for making informed decisions about drilling and completing the well.")
-    img = Image.open("PetrophysicApp/resources/image.png")
+    img = Image.open("Resources/image.png")
     st.image(img,width=100, use_column_width=True)
-    video = open("resources/videowelllog.mp4", "rb")
+    video = open("Resources/videowelllog.mp4", "rb")
     st.video(video)
     st.caption("Video about Well Logging")
 
